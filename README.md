@@ -15,8 +15,8 @@ On supposera que skidlucas est votre pseudonyme.
 
 Dans deux terminaux différents:
 
-`docker run -p 9090:9090 skidlucas/banking` <br />
-`docker run -p 8080:8080 skidlucas/backend`
+`docker run -p 8080:8080 --name backend skidlucas/backend` <br />
+`docker run -p 9090:9090 --net=container:backend skidlucas/banking` 
 
 Puis on lance le client comme d'habitude, depuis notre IDE préféré ou avec `mvn exec:java` dans le dossier client.
 <br />
@@ -24,7 +24,7 @@ Puis on lance le client comme d'habitude, depuis notre IDE préféré ou avec `m
 
 ### Pour lancer les images sur plusieurs machines
 
-Il faudrait changer à la main l'adresse IP dans TCF, plus précisément dans *j2e/src/main/resources/bank.properties* et dans *j2e/src/main/java/.../utils/BankAPI.java*, en remplaçant localhost par l'adresse IP de la machine qui lance le serveur .NET. Ensuite, il faudrait build de nouveau le war **tcf-backend.war** et remplacer le war présent dans le dossier *docker-devops/backend*.
+Il faudrait changer à la main l'adresse IP dans TCF, plus précisément dans *j2e/src/main/resources/bank.properties* et dans *j2e/src/main/java/.../utils/BankAPI.java*, en remplaçant localhost par l'adresse IP de la machine qui lance le serveur .NET. Ensuite, il faudrait build de nouveau le war **tcf-backend.war** et remplacer le war présent dans le dossier *docker-devops/backend*. Enfin, il faudrait changer l'adresse IP dans *client/src/main/java/Main.java* par l'adresse IP de la machine qui lance le serveur J2E.
 <br />
 <br />
 
