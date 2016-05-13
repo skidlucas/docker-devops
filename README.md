@@ -16,7 +16,7 @@ On supposera que skidlucas est votre pseudonyme.
 Dans deux terminaux différents:
 
 `docker run -p 8080:8080 --name backend skidlucas/backend` <br />
-`docker run -p 9090:9090 --net=container:backend skidlucas/banking` 
+`docker run --net=container:backend skidlucas/banking` 
 
 Puis on lance le client comme d'habitude, depuis notre IDE préféré ou avec `mvn exec:java` dans le dossier client.
 <br />
