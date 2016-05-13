@@ -5,8 +5,7 @@ Dans un premier temps:
 1. `git clone https://github.com/skidlucas/docker-devops.git`
 2. `cd docker-devops`
 
-<br />
-<br />
+
 ### Avec deux images en local
 
 On supposera que skidlucas est votre pseudonyme.
