@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+
+  backend:
+    image: skidlucas/backend
+
+    ports:
+      - "8080:8080"
+    network_mode: "host"
+
+  banking:
+    image: skidlucas/banking
+
+    network_mode: "service:backend"
